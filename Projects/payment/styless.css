@@ -1,0 +1,334 @@
+* {
+    margin: auto;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    max-width: 390px;
+    user-select: none;
+}
+
+/* header part start */
+.upper {
+    height: 65px;
+    background: #6739B7;
+    display: flex;
+
+}
+
+.logoimg {
+    margin: -10px;
+    width: 100px;
+    height: 55px;
+    border-radius: 50%;
+    align-self: center;
+
+}
+
+#payment {
+    background-color: white;
+    max-width: 90vw;
+    border-radius: 15px;
+}
+
+.Transaction {
+    margin: 15px 95px 10px auto;
+    color: #fff;
+}
+
+.suss-time {
+    color: white;
+    position: absolute;
+    margin-top: 36px;
+    margin-left: 85px;
+}
+
+/* header part was completed */
+
+
+
+
+/* body part start */
+body {
+    background: #f3f3f3;
+
+}
+
+
+/* personal details here (1st section) */
+.perosnal-details {
+    margin-top: 10px;
+    border-radius: 15px;
+    background: #fff;
+
+}
+
+hr {
+    width: 90%;
+    margin: auto;
+    background-color: rgba(68, 67, 67, 0.377);
+}
+
+.h4 {
+    padding: 20px 0px 10px 20px;
+}
+
+.name,
+.upi {
+    display: inline-block;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+
+}
+
+.upi {
+    color: rgba(0, 0, 0, 0.822);
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.amount {
+    margin-right: 15px;
+    margin-top: 10px;
+    float: right;
+    font-weight: 600;
+    font-size: 20px;
+
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #00eeff;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.para {
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+/* 1st section endded here  */
+
+
+
+
+
+/* banking section start here  */
+.banking {
+    height: 80px;
+    color: rgba(0, 0, 0, 0.747);
+    font-size: 13px;
+
+
+}
+
+.book-b,
+#tran-id,
+.debit {
+    font-weight: 600;
+    position: absolute;
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.747);
+    font-size: 13px;
+    margin-left: 20px;
+}
+
+.book-c {
+    display: inline;
+    position: absolute;
+    margin-left: 140px;
+    margin-top: 20px;
+}
+
+.book-n {
+    display: inline;
+    position: absolute;
+    margin-left: 148px;
+    margin-top: 20px;
+}
+
+#green_tick {
+    width: 20px;
+    display: inline;
+    position: absolute;
+    margin-left: 230px;
+    margin-top: 17px;
+}
+
+.sent_to {
+    position: absolute;
+    font-weight: 600;
+
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.comma {
+    display: inline;
+    position: absolute;
+    margin-left: 140px;
+    margin-top: 41px;
+}
+
+#google_pay {
+    width: 59px;
+    margin-left: 140px;
+    margin-top: 32px;
+}
+
+.id_upi {
+    display: inline;
+    position: absolute;
+    margin-left: -5px;
+    margin-top: 43px;
+}
+
+/* banking section end */
+
+
+
+
+
+/* transfer section start here */
+.Transfer {
+    height: 50px;
+    
+    /* margin-top: 20px; */
+}
+.up-down{
+    background: white;
+    padding-top: 20px;
+    height: 210px;
+    border-radius: 0px 0px 15px 15px ;
+    
+}
+#list {
+    margin-left: 20px;
+    margin-top: 17px;
+    position: absolute;
+}
+
+.tran-d {
+    margin-top: 20px;
+    position: absolute;
+    margin-left: 55px;
+}
+
+#up-arrow{
+    position: absolute;
+    margin-left: 335px;
+    margin-top: 14px;
+    font-size: 30px;
+}
+#down-arrow {
+    position: absolute;
+    margin-left: 335px;
+    margin-top: 14px;
+    font-size: 30px;
+}
+
+#tran-id {
+    display: block;
+    position: relative;
+    margin-top: 40px;
+}
+
+.tran-id-text {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.debit {
+    display: block;
+    position: relative;
+}
+
+#sbi-logo {
+    width: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 13px;
+    margin-top: 5px;
+    margin-left: 20px;
+    display: inline;
+    padding: 3px;
+}
+
+.id_card {
+    display: inline;
+    position: absolute;
+    margin-left: 35px;
+    margin-top: 16px;
+    font-size: large;
+}
+
+.ammot {
+    display: inline;
+    margin-right: 35px;
+    margin-top: 10px;
+    float: right;
+    font-size: 18px;
+}
+
+.utr {
+    display: inline;
+    margin-left: 35px;
+    position: absolute;
+    margin-top: 50px;
+color: rgba(0, 0, 0, 0.747);
+}
+
+/* transfer section end here */
+
+
+input {
+    display: none;
+}
+
+
+
+/*powered by part start */
+.lower {
+    width: 30vw;
+    height: auto;
+    margin-top: 200px;
+    text-align: center;
+
+}
+
+.Power {
+    color: rgba(36, 35, 35, 0.623);
+    font-size: 0.8em;
+}
+
+.foot {
+    width: 55px;
+}
+
+/*powered by part end */
+
+
+
+/*animation part start here  */
+
+
+input:checked ~  #down-arrow {
+    opacity: 0;
+}
+input:checked ~  .up-down{
+    display: none;
+}
+input:checked ~  .up-down{
+    display: none;
+}
+
+#arrow:not(:checked) ~ #up-arrow{
+    opacity: 0;
+}

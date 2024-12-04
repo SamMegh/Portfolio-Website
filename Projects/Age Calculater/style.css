@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: #000;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+div {
+
+    display: inline-block;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 30px 40px 40px 40px;
+    margin-top: 9vh;
+    transition: 0.2s;
+}
+
+div:hover {
+    scale: 1.04;
+    box-shadow: 0px 0px 10px #00ccff;
+
+}
+
+body {
+    width: 100vw;
+    text-align: center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url("/icons8-calendar-50.png");
+}
+
+input {
+
+
+    padding: 7px;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+    padding-bottom: 0px;
+    border-bottom: 1.8px solid #00ccff;
+    color: white;
+}
+
+input:hover {
+    border-bottom: 3px solid #00ccff;
+}
+
+button {
+    width: 90px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 7px #00ccff;
+    transition: 0.2s;
+}
+
+button:hover {
+    box-shadow: 0px 0px 7px 5px #00ccff;
+
+}
+
+p {
+    margin: 10px;
+    font-size: 25px;
+}
+
+.input {
+    color: black;
+    background: white;
+}
+
+
+footer {
+    font-size: 6px;
+    position: absolute;
+    bottom: 5px;
+    right: 1rem;
+    color: #ffffff6e;
+}
