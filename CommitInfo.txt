@@ -1,0 +1,11 @@
+# 1st commit 'starting of the project'
+   In the first commit, I add all the file i have created resently at that time project section was completed.
+   Pending Work:-
+           * contact.ejs file was incomplete and some work was pending to do, as well as conact form in AdminPenal was incompleted.
+
+           
+# 2nd commit 'work of contact page '
+   In  this commit, I added contact page which show all the message from over form of frontend/contact.html requests 
+   Pending work:-
+            * can not render perfectly after adding a new message, not redarecting to the page of ejs. and same error in the projecct section also.
+            * project client paage aslo need some work to shwo desire output.
