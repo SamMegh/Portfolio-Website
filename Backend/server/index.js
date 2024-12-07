@@ -74,10 +74,9 @@ let contact = [
 ];
 let i = 0;
 
-app.post("/post", (req, res) => {
+app.post("/projects", (req, res) => {
     let { name, img, discription } = req.body;
     projects.push({ name, img, discription });
-    res.redirect('projects.ejs', { projects });
 
 })
 app.get("/projects", (req, res) => {
@@ -87,9 +86,6 @@ app.get("/projects", (req, res) => {
 app.post("/contactus", (req, res) => {
     let { name, mobile_no, email, message } = req.body;
     contact.push({ name, mobile_no, email, message });
-    res.redirect('contacts/contact.ejs', { contact }, i);
-
-
 });
 app.get("/contacts", (req, res) => {
     res.render('contact.ejs', { contact, i });
