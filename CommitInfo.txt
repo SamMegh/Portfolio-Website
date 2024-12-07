@@ -9,3 +9,7 @@
    Pending work:-
             * can not render perfectly after adding a new message, not redarecting to the page of ejs. and same error in the projecct section also.
             * project client paage aslo need some work to show desire output.
+
+# 3d commit 'contact page completed'
+   In thsi commit, i have done all the work of the contact page and project page also 
+      I also solve the problem that accure in 2nd commit.
