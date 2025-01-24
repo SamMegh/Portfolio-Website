@@ -1,15 +1,22 @@
-const { name } = require('ejs');
 const express = require('express');
 const port = 8080;
-const path = require("path");
+
+
 const app = express();
-app.use(express.urlencoded({ extended: true }))
 app.set("view engine", "ejs");
+
+app.use(express.urlencoded({ extended: true })) //for except qurry from get request
+
+
+
+// all path to use 
+const path = require("path");
 app.set("views", path.join(__dirname, '..', "views"));
 app.use(express.static(path.join(__dirname, '..', "styless")));
 app.use(express.static(path.join(__dirname, '..', "javascript")));
-app.use('/images', express.static(path.join(__dirname, '..', '..', "img")));
-app.use('/Frontend', express.static(path.join(__dirname, '..', '..', "Frontend")));
+app.use('/images', express.static(path.join(__dirname, '..', '..', "images")));
+app.use('/Frontend',express.static(path.join(__dirname, "..", "..", "Frontend")));
+
 
 let projects = [
     {
@@ -72,8 +79,17 @@ let contact = [
         message: "asdfertyuxcvbnm,sdty"
     },
 ];
-let i = 0;
 
+let i = 0; //share with contact information
+
+
+// handling main page 
+app.get("/", (req,res)=>{
+    res.sendFile(path.join(__dirname, "..", "..", "Frontend", "index.html"));
+});
+
+
+// handling Project requests 
 app.post("/projects", (req, res) => {
     let { name, img, discription } = req.body;
     projects.push({ name, img, discription });
@@ -83,6 +99,9 @@ app.get("/projects", (req, res) => {
     res.render('projects.ejs', { projects });
 
 });
+
+
+// handling contact requests 
 app.post("/contactus", (req, res) => {
     let { name, mobile_no, email, message } = req.body;
     contact.push({ name, mobile_no, email, message });
