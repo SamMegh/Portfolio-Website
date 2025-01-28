@@ -1,105 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        main {
-            margin: auto;
-            width: 320px;
-            text-align: center;
-        }
+      main {
+        margin: auto;
+        width: 320px;
+        text-align: center;
+      }
 
-        .child2 {
-            display: flex;
-            align-content: center;
-        }
+      .child2 {
+        display: flex;
+        align-content: center;
+      }
 
-        p {
-            display: inline;
-        }
+      p {
+        display: inline;
+      }
 
-        #image_pro {
-            font-size: 8px;
-        }
+      #image_pro {
+        font-size: 8px;
+      }
 
-        #UserName {
-            font-size: 10px;
-        }
+      #UserName {
+        font-size: 10px;
+      }
 
-        label {
-            margin: auto;
-            margin-left: 50px;
-        }
+      label {
+        margin: auto;
+        margin-left: 50px;
+      }
 
-        .error {
+      .error {
+        color: red;
+        font-size: 10px;
+        position: absolute;
+        margin: auto;
+        display: none;
+      }
 
-            color: red;
-            font-size: 10px;
-            position: absolute;
-            margin: auto;
-            display: none;
-        }
-
-        button {
-            padding: 5px;
-            width: 60px;
-            height: 22px;
-            font-size: 10px;
-        }
+      button {
+        padding: 5px;
+        width: 60px;
+        height: 22px;
+        font-size: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <h1>Welcome to Projects AdminPanel, Sir.</h1>
-        <form method="post" action="http://localhost:8080/projects" id="form">
-            <p>UserName :&nbsp;</p><input type="text" name="name" id="UserName" /><br>
+      <h1>Welcome to Projects AdminPanel, Sir.</h1>
+      <form
+        method="post" action="http://localhost:8080/projects/new"  id="form" enctype="multipart/form-data"  >
+        <p>UserName :&nbsp;</p>
+        <input type="text" name="name" id="UserName" /><br />
 
+        <label for="image_pro">
+          <p>Image&nbsp; :</p> </label
+        ><input type="file" name="img" id="image_pro" accept="image/png, image/jpeg"
+        /><br />
+        <p class="error">Please select a image!</p>
+        <br />
+        <textarea name="discription" id="discription" maxlength="50ch" ></textarea>
 
-
-            <label for="image_pro">
-                <p>Image&nbsp; : </p>
-            </label><input type="file" name="img" id="image_pro" accept="image/png, image/jpeg" /><br>
-            <p class="error">Please select a image!</p><br>
-            <textarea name="discription" id="discription" maxlength="50ch"></textarea>
-
-
-            <button type="submit"> Submit</button>
-
-        </form>
-        <script>
-            const f = document.querySelector('#form')
-            const img = document.querySelector('#image_pro')
-            const error = document.querySelector('.error')
-            let but = document.querySelector("button")
-            // but.addEventListener('click', () => {
-            //     setTimeout(() => {
-
-            //         window.location.reload();
-            //     }, 1000);
-            // });
-
-
-            f.addEventListener('submit', (e) => {
-                const i = img.files[0];
-                if (i && i.type.startsWith('image/')) {
-                    alert("image uploaded, Sir!")
-                }
-                else {
-                    e.preventDefault();
-                    error.style.display = 'inline';
-                    alert("please upload a image, Sir!")
-                }
-            });</script>
+        <button type="submit">Submit</button>
+      </form>
     </main>
-</body>
-
+  </body>
 </html>
