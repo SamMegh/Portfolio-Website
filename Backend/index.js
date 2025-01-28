@@ -11,11 +11,11 @@ app.use(express.urlencoded({ extended: true })) //for except qurry from get requ
 
 // all path to use 
 const path = require("path");
-app.set("views", path.join(__dirname, '..', "views"));
-app.use(express.static(path.join(__dirname, '..', "styless")));
-app.use(express.static(path.join(__dirname, '..', "javascript")));
-app.use('/images', express.static(path.join(__dirname, '..', '..', "images")));
-app.use('/Frontend',express.static(path.join(__dirname, "..", "..", "Frontend")));
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "styless")));
+app.use(express.static(path.join(__dirname, "javascript")));
+app.use('/images', express.static(path.join(__dirname,'..',"images")));
+app.use('/Frontend',express.static(path.join(__dirname,'..', "Frontend")));
 
 
 let projects = [
@@ -85,7 +85,7 @@ let i = 0; //share with contact information
 
 // handling main page 
 app.get("/", (req,res)=>{
-    res.sendFile(path.join(__dirname, "..", "..", "Frontend", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "Frontend", "index.html"));
 });
 
 
