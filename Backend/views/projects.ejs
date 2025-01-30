@@ -13,16 +13,22 @@
 </head>
 
 <body>
+    <div id="navbar"></div>
+    <script>
+        fetch('/client/navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+    </script>
     <div class="main_container">
         <h1>Projects</h1>
         <hr>
 
         <div class="all_projects">
-            <%for(p of projects){%>
+            <%for(p of allproject){%>
 
 
                 <div class="box">
-                    <img src="/images/<%=p.img%>" alt="project image">
+                    <img src="<%=p.img%>" alt="project image">
                     <h2 class="name">
                         <%=p.name %>
                     </h2>
@@ -48,10 +54,10 @@
                 for (i = c + 1; i <= c + 3; i++) {
                     if (i >= box.length) {
                         but.style.display = "none";
-                        break;
+                       
                     }
 
-                    box[i].style.display = "inline-block";
+                    box[i-1].style.display = "inline-block";
                 }
                 window.scrollBy({
                     top: 500,
