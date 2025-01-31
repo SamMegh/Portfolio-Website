@@ -4,9 +4,6 @@ const multer = require("multer");
 const path = require("path");
 const port = 8080;
 
-let filname ;
-
-
 const app = express();
 app.set("view engine", "ejs");
 
@@ -21,19 +18,7 @@ app.use("/project_images", express.static(path.join(__dirname, "..", "project_im
 app.use("/client", express.static(path.join(__dirname, "..", "client")));
 
 
-
-// storage for multer to store image
-const storage = multer.diskStorage({
-    destination: function (req, file, cb){
-    return cb(null, "./project_images");//in future login condition was written at here if the user is loggin then request further transfer othrewise not
-  },
-  filename: function (req, file, cb) {
-    let filname=`${Date.now()}-${file.originalname}`;
-   return cb(null,filname );
-  }
-});
-const upload = multer({storage })
-  // connection check with mongodb
+// connection check with mongodb
 main()
   .then((result) => {
     console.log("conecction suss");
@@ -75,24 +60,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "client", "index.html"));
 });
 
-// handling new Project requests
-app.post("/projects/new", upload.single('img'),(req, res) => {
-  let { name, discription } = req.body;
-  img=`/${req.file.path}`;
-  img=img.replace(/\\/g, "/");
-  const data = {
-    name,
-    img,
-    discription
-  }
 
- Project.collection.insertOne(data).catch(err=>{
-  console.log(err);
- });
-
-//  res.redirect("/projects")
- 
-});
 
 app.get("/projects", (req, res) => {
   async function exicute(){

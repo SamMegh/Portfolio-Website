@@ -135,9 +135,11 @@
 </head>
 
 <body>
+    <h1>The use try to contact you</h1>
+    <hr>
     <div id="navbar"></div>
     <script>
-        fetch('navbar.html')
+        fetch('/images/navbar.html')
             .then(response => response.text())
             .then(data => document.getElementById('navbar').innerHTML = data);
     </script>
