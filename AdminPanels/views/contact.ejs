@@ -34,8 +34,10 @@
             background: rgba(0, 0, 255, 0.382);
             color: white;
             font-size: large;
+
         }
-        tr{
+
+        tr {
             height: 50px;
         }
 
@@ -45,6 +47,23 @@
 
         tr:first-child {
             border-top-left-radius: 10px;
+        }
+
+        /* arrow */
+        .arrow_up {
+            width: 15px;
+            left: 3px;
+            top: 2px;
+            position: relative;
+            display: none;
+        }
+
+        .arrow_down {
+            display: none;
+            width: 25px;
+            position: relative;
+            top: 5px;
+            left: -2px;
         }
     </style>
 </head>
@@ -59,27 +78,70 @@
     <table class="table_main">
         <tr class="heading_row">
             <th class="namecolumn">
-                Name
+                Name <img src="/images/arrow-down.png" class="name_arrow_down arrow_down" alt="arrow-down"><img
+                    src="/images/arrow-up.png" class="name_arrow_up arrow_up" alt="arrow-down">
             </th>
             <th class="phonecolumn">
-                Phone No.
+                Phone No.<img src="/images/arrow-down.png" class="phone_arrow_down arrow_down" alt="arrow-down"><img
+                    src="/images/arrow-up.png" class="name_arrow_up arrow_up" alt="arrow-down">
             </th>
             <th class="emailcolumn">
-                Email
+                Email<img src="/images/arrow-down.png" class="email_arrow_down arrow_down" alt="arrow-down"><img
+                    src="/images/arrow-up.png" class="name_arrow_up arrow_up" alt="arrow-down">
             </th>
             <th class="messagecolumn">
-                Message
+                Message<img src="/images/arrow-down.png" class="message_arrow_down arrow_down" alt="arrow-down"><img
+                    src="/images/arrow-up.png" class="name_arrow_up arrow_up" alt="arrow-down">
             </th>
         </tr>
         <%for(contact of result){%>
-        <tr class="table_data">
-            <td><%=contact.name%></td>
-            <td><%=contact.mobile_no%></td>
-            <td><%=contact.email%></td>
-            <td><%=contact.message%></td>
-        </tr>
-    <% } %>    </table>
+            <tr class="table_data">
+                <td>
+                    <%=contact.name%>
+                </td>
+                <td>
+                    <%=contact.mobile_no%>
+                </td>
+                <td>
+                    <%=contact.email%>
+                </td>
+                <td>
+                    <%=contact.message%>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+    <script>
+        let ad = 0;
+        let au = 0;
+        let arrow_up = document.querySelectorAll(".arrow_up");
+        let arrow_down = document.querySelectorAll(".arrow_down");
+        let heading_cells = document.querySelectorAll(".heading_row > *"); // Select all child elements
 
+        heading_cells.forEach((cell, index) => {
+            cell.addEventListener("click", () => {
+                arrow_up.forEach(arrow => arrow.style.display = "none");
+                arrow_down.forEach(arrow => arrow.style.display = "none");
+
+                if (arrow_down[index].style.display == "none" && ad == 0) {
+                    arrow_down[index].style.display = "inline-block";
+                    arrow_up[index].style.display = "none";
+                    ad = 1;
+                    descending(cell);
+                } else if (arrow_up[index].style.display == "none" && au == 0) {
+                    arrow_down[index].style.display = "none";
+                    arrow_up[index].style.display = "inline-block";
+                    au = 1;
+                }
+                else {
+                    arrow_down[index].style.display = "none";
+                    arrow_up[index].style.display = "none";
+                    au = 0;
+                    ad = 0;
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
